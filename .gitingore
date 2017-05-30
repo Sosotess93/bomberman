@@ -2,6 +2,9 @@
 # Created by https://www.gitignore.io/api/linux,emacs,windows,visualstudio,visualstudiocode
 
 output/
+solution/Bomberman/Debug/
+solution/Bomberman/Release/
+
 
 ### Emacs ###
 # -*- mode: gitignore; -*-
