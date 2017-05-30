@@ -44,10 +44,13 @@ namespace game
 		explicit player(int hp, int power, float x, float y, float z);
 		virtual ~player();
 
+		void showStats() const;
+
 		int	getHp() const;
 		int getPower() const;
 
-		void showStats() const;
+		void setHp(int hp);
+		void setPower(int power);
 		void setState(STATE s);
 		void setLocation(const common::Location<float>& NewLocation);
 		void setCharacteristic(characteristique c);
