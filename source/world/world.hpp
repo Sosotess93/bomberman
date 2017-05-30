@@ -30,6 +30,9 @@ namespace game
 	public:
 		explicit world();
 		~world();
+		
+		void add(ITEM ITEM, int x, int y);
+		bool is(ITEM item, int x, int y);
 	private:
 		std::array<std::array<layout, MAX_HEIGHT_FIELD>, MAX_WIDTH_FIELD> m_field;
 	};
