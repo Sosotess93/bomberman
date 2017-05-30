@@ -25,6 +25,12 @@
     <Filter Include="Fichiers sources\Common">
       <UniqueIdentifier>{b92f28bc-e6c1-420f-b2a7-3e5152573533}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\World">
+      <UniqueIdentifier>{5760dd66-e032-4593-9aed-1188964f57ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\World">
+      <UniqueIdentifier>{41dbf7cb-f0a9-495e-baf9-87aef0d22c93}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\app\app.cpp">
@@ -36,10 +42,16 @@
     <ClCompile Include="..\..\source\common\common.hpp">
       <Filter>Fichiers sources\Common</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\source\world\world.cpp">
+      <Filter>Fichiers sources\World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\source\player\player.h">
       <Filter>Fichiers d%27en-tête\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\world\world.hpp">
+      <Filter>Fichiers d%27en-tête\World</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
