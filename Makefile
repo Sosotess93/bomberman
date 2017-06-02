@@ -5,7 +5,7 @@
 ## Login   <sofiane@epitech.net>
 ## 
 ## Started on  Tue May 30 15:02:50 2017 sofiane
-## Last update Fri Jun  2 13:46:48 2017 sofiane
+## Last update Fri Jun  2 21:43:20 2017 sofiane
 ##
 
 GPP	=	g++
@@ -13,16 +13,19 @@ GPP	=	g++
 NAME	=	Bomberman
 
 CPPFLAGS	+=	-I source/engine/window/
+CPPFLAGS	+=	-I source/engine/event/
 CPPFLAGS	+=	-I irrlicht/include/
 
 
-LDFLAGS	=	-L lib/ -lIrrlicht -lGL -lX11 -lXxf86vm
+LDFLAGS	=	-L irrlicht/lib -lIrrlicht -lGL -lX11 -lXxf86vm
 
 XWINDOW	=	source/engine/window/
+XEVENT	=	source/engine/event/
 XSAMPLE	=	source/sample/
 
-SRC	=	$(XSAMPLE)main_window.cpp \
-		$(XWINDOW)Window.cpp
+
+SRC	=	$(XSAMPLE)main_event.cpp \
+		$(XEVENT)eventReceiver.cpp \
 
 OBJ	=	$(SRC:.cpp=.o)
 
