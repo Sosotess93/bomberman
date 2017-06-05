@@ -1,29 +1,18 @@
 #ifndef _WORLD_HPP_
 #define _WORLD_HPP_
 
+#include <iostream>
 #include <array>
 #include <string>
 #include <vector>
+#include <fstream>
+#include "common.hpp"
 
 namespace game
 {
 
-#define MAX_HEIGHT_FIELD 10
-#define MAX_WIDTH_FIELD 10
-
-	enum ITEM
-	{
-		OBSTACLE,
-		PLAYER,
-		ENNEMY,
-		ITEM_UNKNOW
-	};
-
-	struct layout
-	{
-		std::vector<ITEM> m_items;
-	};
-	typedef layout layout;
+#define MAX_HEIGHT_FIELD 20
+#define MAX_WIDTH_FIELD 20
 
 	class world
 	{
@@ -31,10 +20,8 @@ namespace game
 		explicit world();
 		~world();
 		
-		void add(ITEM ITEM, int x, int y);
-		bool is(ITEM item, int x, int y);
+		void set(const std::string& fileName);
 	private:
-		std::array<std::array<layout, MAX_HEIGHT_FIELD>, MAX_WIDTH_FIELD> m_field;
 	};
 }
 #endif // !_WORLD_HPP_

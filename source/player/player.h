@@ -5,18 +5,7 @@
 #include "common.hpp"
 
 namespace game
-{
-
-	enum STATE
-	{
-		IDLE,
-		STAND,
-		RUN,
-		JUMP,
-		PUT_BOMB,
-		STATE_UNKNOW
-	};
-	
+{	
 	struct characteristique
 	{
 		explicit characteristique() {}
@@ -51,7 +40,7 @@ namespace game
 
 		void setHp(int hp);
 		void setPower(int power);
-		void setState(STATE s);
+		void setState(common::STATE s);
 		void setLocation(const common::Location<float>& NewLocation);
 		void setCharacteristic(characteristique c);
 
@@ -60,7 +49,7 @@ namespace game
 	private:
 		characteristique		m_characteristique;
 		common::Location<float> m_location;
-		STATE					m_state;
+		common::STATE			m_state;
 	};
 
 }

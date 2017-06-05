@@ -69,21 +69,35 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\game\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\game\</OutDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\source\player;..\..\source\common;..\..\source\world;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\source\player\;..\..\source\world\;..\..\source\engine\window\;..\..\source\common\;..\..\source\engine\event\;..\..\irrlicht\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\..\irrlicht\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Irrlicht.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\source\player\;..\..\source\world\;..\..\source\engine\window\;..\..\source\common\;..\..\source\engine\event\;..\..\irrlicht\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\..\irrlicht\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Irrlicht.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -92,11 +106,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\source\player;..\..\source\common;..\..\source\world;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\source\player;..\..\source\common;..\..\source\world;..\..\source\engine\window\;..\..\source\engine\event\;..\..\irrlicht\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Users\cyril\Documents\bomberman\irrlicht\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Irrlicht.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -106,19 +122,208 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\source\player\;..\..\source\world\;..\..\source\engine\window\;..\..\source\common\;..\..\source\engine\event\;..\..\irrlicht\include\;C:\Program Files (x86)\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\irrlicht\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Irrlicht.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\app\app.cpp" />
     <ClCompile Include="..\..\source\common\common.hpp" />
+    <ClCompile Include="..\..\source\engine\event\eventReceiver.cpp" />
+    <ClCompile Include="..\..\source\engine\window\Window.cpp" />
     <ClCompile Include="..\..\source\player\player.cpp" />
     <ClCompile Include="..\..\source\world\world.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\irrlicht\include\aabbox3d.h" />
+    <ClInclude Include="..\..\irrlicht\include\CDynamicMeshBuffer.h" />
+    <ClInclude Include="..\..\irrlicht\include\CIndexBuffer.h" />
+    <ClInclude Include="..\..\irrlicht\include\CMeshBuffer.h" />
+    <ClInclude Include="..\..\irrlicht\include\coreutil.h" />
+    <ClInclude Include="..\..\irrlicht\include\CVertexBuffer.h" />
+    <ClInclude Include="..\..\irrlicht\include\dimension2d.h" />
+    <ClInclude Include="..\..\irrlicht\include\driverChoice.h" />
+    <ClInclude Include="..\..\irrlicht\include\EAttributes.h" />
+    <ClInclude Include="..\..\irrlicht\include\ECullingTypes.h" />
+    <ClInclude Include="..\..\irrlicht\include\EDebugSceneTypes.h" />
+    <ClInclude Include="..\..\irrlicht\include\EDeviceTypes.h" />
+    <ClInclude Include="..\..\irrlicht\include\EDriverFeatures.h" />
+    <ClInclude Include="..\..\irrlicht\include\EDriverTypes.h" />
+    <ClInclude Include="..\..\irrlicht\include\EGUIAlignment.h" />
+    <ClInclude Include="..\..\irrlicht\include\EGUIElementTypes.h" />
+    <ClInclude Include="..\..\irrlicht\include\EHardwareBufferFlags.h" />
+    <ClInclude Include="..\..\irrlicht\include\EMaterialFlags.h" />
+    <ClInclude Include="..\..\irrlicht\include\EMaterialTypes.h" />
+    <ClInclude Include="..\..\irrlicht\include\EMeshWriterEnums.h" />
+    <ClInclude Include="..\..\irrlicht\include\EMessageBoxFlags.h" />
+    <ClInclude Include="..\..\irrlicht\include\EPrimitiveTypes.h" />
+    <ClInclude Include="..\..\irrlicht\include\ESceneNodeAnimatorTypes.h" />
+    <ClInclude Include="..\..\irrlicht\include\ESceneNodeTypes.h" />
+    <ClInclude Include="..\..\irrlicht\include\EShaderTypes.h" />
+    <ClInclude Include="..\..\irrlicht\include\ETerrainElements.h" />
+    <ClInclude Include="..\..\irrlicht\include\fast_atof.h" />
+    <ClInclude Include="..\..\irrlicht\include\heapsort.h" />
+    <ClInclude Include="..\..\irrlicht\include\IAnimatedMesh.h" />
+    <ClInclude Include="..\..\irrlicht\include\IAnimatedMeshMD2.h" />
+    <ClInclude Include="..\..\irrlicht\include\IAnimatedMeshMD3.h" />
+    <ClInclude Include="..\..\irrlicht\include\IAnimatedMeshSceneNode.h" />
+    <ClInclude Include="..\..\irrlicht\include\IAttributeExchangingObject.h" />
+    <ClInclude Include="..\..\irrlicht\include\IAttributes.h" />
+    <ClInclude Include="..\..\irrlicht\include\IBillboardSceneNode.h" />
+    <ClInclude Include="..\..\irrlicht\include\IBillboardTextSceneNode.h" />
+    <ClInclude Include="..\..\irrlicht\include\IBoneSceneNode.h" />
+    <ClInclude Include="..\..\irrlicht\include\ICameraSceneNode.h" />
+    <ClInclude Include="..\..\irrlicht\include\IColladaMeshWriter.h" />
+    <ClInclude Include="..\..\irrlicht\include\ICursorControl.h" />
+    <ClInclude Include="..\..\irrlicht\include\IDummyTransformationSceneNode.h" />
+    <ClInclude Include="..\..\irrlicht\include\IDynamicMeshBuffer.h" />
+    <ClInclude Include="..\..\irrlicht\include\IEventReceiver.h" />
+    <ClInclude Include="..\..\irrlicht\include\IFileArchive.h" />
+    <ClInclude Include="..\..\irrlicht\include\IFileList.h" />
+    <ClInclude Include="..\..\irrlicht\include\IFileSystem.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGeometryCreator.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGPUProgrammingServices.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIButton.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUICheckBox.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIColorSelectDialog.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIComboBox.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIContextMenu.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIEditBox.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIElement.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIElementFactory.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIEnvironment.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIFileOpenDialog.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIFont.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIFontBitmap.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIImage.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIImageList.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIInOutFader.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIListBox.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIMeshViewer.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIScrollBar.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUISkin.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUISpinBox.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUISpriteBank.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIStaticText.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUITabControl.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUITable.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIToolbar.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUITreeView.h" />
+    <ClInclude Include="..\..\irrlicht\include\IGUIWindow.h" />
+    <ClInclude Include="..\..\irrlicht\include\IImage.h" />
+    <ClInclude Include="..\..\irrlicht\include\IImageLoader.h" />
+    <ClInclude Include="..\..\irrlicht\include\IImageWriter.h" />
+    <ClInclude Include="..\..\irrlicht\include\IIndexBuffer.h" />
+    <ClInclude Include="..\..\irrlicht\include\ILightManager.h" />
+    <ClInclude Include="..\..\irrlicht\include\ILightSceneNode.h" />
+    <ClInclude Include="..\..\irrlicht\include\ILogger.h" />
+    <ClInclude Include="..\..\irrlicht\include\IMaterialRenderer.h" />
+    <ClInclude Include="..\..\irrlicht\include\IMaterialRendererServices.h" />
+    <ClInclude Include="..\..\irrlicht\include\IMesh.h" />
+    <ClInclude Include="..\..\irrlicht\include\IMeshBuffer.h" />
+    <ClInclude Include="..\..\irrlicht\include\IMeshCache.h" />
+    <ClInclude Include="..\..\irrlicht\include\IMeshLoader.h" />
+    <ClInclude Include="..\..\irrlicht\include\IMeshManipulator.h" />
+    <ClInclude Include="..\..\irrlicht\include\IMeshSceneNode.h" />
+    <ClInclude Include="..\..\irrlicht\include\IMeshWriter.h" />
+    <ClInclude Include="..\..\irrlicht\include\IMetaTriangleSelector.h" />
+    <ClInclude Include="..\..\irrlicht\include\IOSOperator.h" />
+    <ClInclude Include="..\..\irrlicht\include\IParticleAffector.h" />
+    <ClInclude Include="..\..\irrlicht\include\IParticleAnimatedMeshSceneNodeEmitter.h" />
+    <ClInclude Include="..\..\irrlicht\include\IParticleAttractionAffector.h" />
+    <ClInclude Include="..\..\irrlicht\include\IParticleBoxEmitter.h" />
+    <ClInclude Include="..\..\irrlicht\include\IParticleCylinderEmitter.h" />
+    <ClInclude Include="..\..\irrlicht\include\IParticleEmitter.h" />
+    <ClInclude Include="..\..\irrlicht\include\IParticleFadeOutAffector.h" />
+    <ClInclude Include="..\..\irrlicht\include\IParticleGravityAffector.h" />
+    <ClInclude Include="..\..\irrlicht\include\IParticleMeshEmitter.h" />
+    <ClInclude Include="..\..\irrlicht\include\IParticleRingEmitter.h" />
+    <ClInclude Include="..\..\irrlicht\include\IParticleRotationAffector.h" />
+    <ClInclude Include="..\..\irrlicht\include\IParticleSphereEmitter.h" />
+    <ClInclude Include="..\..\irrlicht\include\IParticleSystemSceneNode.h" />
+    <ClInclude Include="..\..\irrlicht\include\IQ3LevelMesh.h" />
+    <ClInclude Include="..\..\irrlicht\include\IQ3Shader.h" />
+    <ClInclude Include="..\..\irrlicht\include\IRandomizer.h" />
+    <ClInclude Include="..\..\irrlicht\include\IReadFile.h" />
+    <ClInclude Include="..\..\irrlicht\include\IReferenceCounted.h" />
+    <ClInclude Include="..\..\irrlicht\include\irrAllocator.h" />
+    <ClInclude Include="..\..\irrlicht\include\irrArray.h" />
+    <ClInclude Include="..\..\irrlicht\include\IrrCompileConfig.h" />
+    <ClInclude Include="..\..\irrlicht\include\irrlicht.h" />
+    <ClInclude Include="..\..\irrlicht\include\IrrlichtDevice.h" />
+    <ClInclude Include="..\..\irrlicht\include\irrList.h" />
+    <ClInclude Include="..\..\irrlicht\include\irrMap.h" />
+    <ClInclude Include="..\..\irrlicht\include\irrMath.h" />
+    <ClInclude Include="..\..\irrlicht\include\irrpack.h" />
+    <ClInclude Include="..\..\irrlicht\include\irrString.h" />
+    <ClInclude Include="..\..\irrlicht\include\irrTypes.h" />
+    <ClInclude Include="..\..\irrlicht\include\irrunpack.h" />
+    <ClInclude Include="..\..\irrlicht\include\irrXML.h" />
+    <ClInclude Include="..\..\irrlicht\include\ISceneCollisionManager.h" />
+    <ClInclude Include="..\..\irrlicht\include\ISceneLoader.h" />
+    <ClInclude Include="..\..\irrlicht\include\ISceneManager.h" />
+    <ClInclude Include="..\..\irrlicht\include\ISceneNode.h" />
+    <ClInclude Include="..\..\irrlicht\include\ISceneNodeAnimator.h" />
+    <ClInclude Include="..\..\irrlicht\include\ISceneNodeAnimatorCameraFPS.h" />
+    <ClInclude Include="..\..\irrlicht\include\ISceneNodeAnimatorCameraMaya.h" />
+    <ClInclude Include="..\..\irrlicht\include\ISceneNodeAnimatorCollisionResponse.h" />
+    <ClInclude Include="..\..\irrlicht\include\ISceneNodeAnimatorFactory.h" />
+    <ClInclude Include="..\..\irrlicht\include\ISceneNodeFactory.h" />
+    <ClInclude Include="..\..\irrlicht\include\ISceneUserDataSerializer.h" />
+    <ClInclude Include="..\..\irrlicht\include\IShaderConstantSetCallBack.h" />
+    <ClInclude Include="..\..\irrlicht\include\IShadowVolumeSceneNode.h" />
+    <ClInclude Include="..\..\irrlicht\include\ISkinnedMesh.h" />
+    <ClInclude Include="..\..\irrlicht\include\ITerrainSceneNode.h" />
+    <ClInclude Include="..\..\irrlicht\include\ITextSceneNode.h" />
+    <ClInclude Include="..\..\irrlicht\include\ITexture.h" />
+    <ClInclude Include="..\..\irrlicht\include\ITimer.h" />
+    <ClInclude Include="..\..\irrlicht\include\ITriangleSelector.h" />
+    <ClInclude Include="..\..\irrlicht\include\IVertexBuffer.h" />
+    <ClInclude Include="..\..\irrlicht\include\IVideoDriver.h" />
+    <ClInclude Include="..\..\irrlicht\include\IVideoModeList.h" />
+    <ClInclude Include="..\..\irrlicht\include\IVolumeLightSceneNode.h" />
+    <ClInclude Include="..\..\irrlicht\include\IWriteFile.h" />
+    <ClInclude Include="..\..\irrlicht\include\IXMLReader.h" />
+    <ClInclude Include="..\..\irrlicht\include\IXMLWriter.h" />
+    <ClInclude Include="..\..\irrlicht\include\Keycodes.h" />
+    <ClInclude Include="..\..\irrlicht\include\line2d.h" />
+    <ClInclude Include="..\..\irrlicht\include\line3d.h" />
+    <ClInclude Include="..\..\irrlicht\include\matrix4.h" />
+    <ClInclude Include="..\..\irrlicht\include\path.h" />
+    <ClInclude Include="..\..\irrlicht\include\plane3d.h" />
+    <ClInclude Include="..\..\irrlicht\include\position2d.h" />
+    <ClInclude Include="..\..\irrlicht\include\quaternion.h" />
+    <ClInclude Include="..\..\irrlicht\include\rect.h" />
+    <ClInclude Include="..\..\irrlicht\include\S3DVertex.h" />
+    <ClInclude Include="..\..\irrlicht\include\SAnimatedMesh.h" />
+    <ClInclude Include="..\..\irrlicht\include\SceneParameters.h" />
+    <ClInclude Include="..\..\irrlicht\include\SColor.h" />
+    <ClInclude Include="..\..\irrlicht\include\SExposedVideoData.h" />
+    <ClInclude Include="..\..\irrlicht\include\SIrrCreationParameters.h" />
+    <ClInclude Include="..\..\irrlicht\include\SKeyMap.h" />
+    <ClInclude Include="..\..\irrlicht\include\SLight.h" />
+    <ClInclude Include="..\..\irrlicht\include\SMaterial.h" />
+    <ClInclude Include="..\..\irrlicht\include\SMaterialLayer.h" />
+    <ClInclude Include="..\..\irrlicht\include\SMesh.h" />
+    <ClInclude Include="..\..\irrlicht\include\SMeshBuffer.h" />
+    <ClInclude Include="..\..\irrlicht\include\SMeshBufferLightMap.h" />
+    <ClInclude Include="..\..\irrlicht\include\SMeshBufferTangents.h" />
+    <ClInclude Include="..\..\irrlicht\include\SParticle.h" />
+    <ClInclude Include="..\..\irrlicht\include\SSharedMeshBuffer.h" />
+    <ClInclude Include="..\..\irrlicht\include\SSkinMeshBuffer.h" />
+    <ClInclude Include="..\..\irrlicht\include\SVertexIndex.h" />
+    <ClInclude Include="..\..\irrlicht\include\SVertexManipulator.h" />
+    <ClInclude Include="..\..\irrlicht\include\SViewFrustum.h" />
+    <ClInclude Include="..\..\irrlicht\include\triangle3d.h" />
+    <ClInclude Include="..\..\irrlicht\include\vector2d.h" />
+    <ClInclude Include="..\..\irrlicht\include\vector3d.h" />
+    <ClInclude Include="..\..\source\engine\event\eventReceiver.hpp" />
+    <ClInclude Include="..\..\source\engine\window\Window.hpp" />
     <ClInclude Include="..\..\source\player\player.h" />
     <ClInclude Include="..\..\source\world\world.hpp" />
   </ItemGroup>

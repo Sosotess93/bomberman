@@ -1,8 +1,26 @@
 #ifndef _COMMON_HPP_
 #define _COMMON_HPP_
 
+#if !defined(TRUE)
+#define FALSE false
+#endif
+#if !defined(FAlSE)
+#define TRUE true
+#endif
+
 namespace common
 {
+
+	enum STATE
+	{
+		IDLE,
+		STAND,
+		RUN,
+		JUMP,
+		PUT_BOMB,
+		STATE_UNKNOW
+	};
+
 	template <typename T>
 	struct Location
 	{

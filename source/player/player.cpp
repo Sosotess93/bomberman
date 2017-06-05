@@ -5,14 +5,14 @@ namespace game
 	player::player() :
 		m_characteristique(3, 2),
 		m_location(1, 1, 1),
-		m_state(STATE::STATE_UNKNOW)
+		m_state(common::STATE::STATE_UNKNOW)
 	{
 	}
 
 	player::player(int hp, int power, float x, float y, float z):
 		m_characteristique(hp, power),
 		m_location(x, y, z),
-		m_state(STATE::STATE_UNKNOW)
+		m_state(common::STATE::STATE_UNKNOW)
 	{
 	}
 
@@ -39,10 +39,11 @@ namespace game
 		return m_characteristique.m_power;
 	}
 	
-	void player::setState(STATE s)
+	void player::setState(common::STATE s)
 	{
 		m_state = s;
 	}
+
 
 	void player::setHp(int hp)
 	{
@@ -77,7 +78,7 @@ namespace game
 			<< m_location.m_z
 			<< ")"
 			<< std::endl;
-		return true;
+		return TRUE;
 	}
 
 }
