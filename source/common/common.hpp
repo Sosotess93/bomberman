@@ -21,6 +21,16 @@ namespace common
 		STATE_UNKNOW
 	};
 
+	enum ITEM
+	{
+		PLAYER,
+		ENNEMY,
+		OBSTACLE,
+		BOMB,
+		EXPLOSION,
+		ITEM_UNKNOW
+	};
+
 	template <typename T>
 	struct Location
 	{
