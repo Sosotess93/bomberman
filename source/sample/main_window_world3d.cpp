@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Thu Jun  1 14:41:04 2017 sofiane
-// Last update Fri Jun 16 19:01:55 2017 sofiane
+// Last update Fri Jun 16 19:19:28 2017 sofiane
 //
 
 #include "Window.hpp"
@@ -27,7 +27,7 @@ int		main()
 
   node = world.createMesh(windows, "source/engine/event/media/sydney.md2","source/engine/event/media/sydney.bmp", 10, 10, 10);
 
-  world.addCamera(windows,100, 100, 100); // ADD CAMERA :)
+  world.addCamera(windows, 100, 100, 100); // ADD CAMERA :)
 
   while (windows->m_device->run())
     {
