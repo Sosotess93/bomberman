@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Thu Jun  1 14:41:04 2017 sofiane
-// Last update Fri Jun 16 02:14:57 2017 sofiane
+// Last update Fri Jun 16 19:01:55 2017 sofiane
 //
 
 #include "Window.hpp"
@@ -25,23 +25,9 @@ int		main()
   windows->setSceneManager();
   windows->m_device->setWindowCaption(L"Class Event");//Nom de la fenetre
 
-  // AJOUT D'UN MESH MANUELLEMENT ENCORE //
-  mesh = windows->m_sceneManager->getMesh("source/engine/event/media/sydney.md2"); // Load Sydney
-  if (!mesh)
-    {
-      windows->m_device->drop();
-      return (1);
-    }
-  node = windows->m_sceneManager->addAnimatedMeshSceneNode(mesh);
-  if (node)
-    {
-      node->setMaterialFlag(irr::video::EMF_LIGHTING, false);
-      node->setMD2Animation(irr::scene::EMAT_STAND);
-      node->setMaterialTexture( 0, windows->m_driver->getTexture("source/engine/event/media/sydney.bmp") );
-    }
-  // FIN DE MESH //
+  node = world.createMesh(windows, "source/engine/event/media/sydney.md2","source/engine/event/media/sydney.bmp", 10, 10, 10);
 
-  world.addCamera(windows, 100, 100, 100); // ADD CAMERA :)
+  world.addCamera(windows,100, 100, 100); // ADD CAMERA :)
 
   while (windows->m_device->run())
     {
