@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Thu Jun  1 14:41:04 2017 sofiane
-// Last update Sun Jun 18 20:27:12 2017 sofiane
+// Last update Sun Jun 18 21:30:29 2017 sofiane
 //
 
 #include "Window.hpp"
@@ -15,7 +15,6 @@
 int		main()
 {
   irr::scene::IAnimatedMeshSceneNode	*node;
-  irr::scene::IAnimatedMesh		*mesh;
   Window				*windows = new Window();
   World3d				*world = new World3d(node);
 
@@ -30,7 +29,7 @@ int		main()
   node = world->createMesh(windows, "source/engine/event/media/sydney.md2","source/engine/event/media/sydney.bmp", 10, 10, 10);
   // FIN ADD MESH //
   // SET ANIMATION MESH //
-  node = world->setAnimation(irr::scene::EMAT_RUN, 100, node); // Animation + speed + node en question
+  node = world->setAnimation(irr::scene::EMAT_RUN, 10, node); // Animation + speed + node en question
   // FIN ANIMATION MESH //
   // ADD CAMERA //
   world->m_cam = world->addCamera(windows, 10, 10, 10); // Fentre + position X Y Z
@@ -42,11 +41,11 @@ int		main()
   eventReceiver recep;
   windows->m_device->setEventReceiver(&recep);
   // FIN EVENT//
-
   // BOUCLE DE JEU DE IRRLICHT //
   while (windows->m_device->run())
     {
       windows->m_driver->beginScene(true, true, irr::video::SColor(200, 200, 200, 200));
+      recep.lastKey(); // RECEPTION DES TOUCHES
       windows->m_sceneManager->drawAll();
       windows->m_driver->endScene();
     }

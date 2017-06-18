@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Tue May 30 21:39:51 2017 sofiane
-// Last update Sun Jun 18 20:54:53 2017 Melliti
+// Last update Sun Jun 18 21:28:31 2017 sofiane
 //
 
 #include "eventReceiver.hpp"
@@ -52,23 +52,18 @@ bool		eventReceiver::OnEvent(const irr::SEvent &event)
 	{
 	case eventReceiver::inputCase::KEY_KEY_W: // avancer
 	  eventReceiver::lastPressedKey = eventReceiver::inputCase::KEY_KEY_W;
-	  //	  lastKey();
 	  return true;
 	case irr::KEY_KEY_S: // reculer
 	  eventReceiver::lastPressedKey = eventReceiver::inputCase::KEY_KEY_S;
-	  //	  lastKey();
 	  return true;
 	case irr::KEY_KEY_A: // gauche
 	  eventReceiver::lastPressedKey = eventReceiver::inputCase::KEY_KEY_A;
-	  //	  lastKey();
 	  return true;
 	case irr::KEY_KEY_D: // droite
 	  eventReceiver::lastPressedKey = eventReceiver::inputCase::KEY_KEY_D;
-	  //	  lastKey();
 	  return true;
 	case irr::KEY_KEY_X: // pauser une bombe
 	  eventReceiver::lastPressedKey = eventReceiver::inputCase::KEY_KEY_X;
-	  //	  lastKey();
 	  return true;
 	default:
 	  eventReceiver::lastPressedKey = eventReceiver::inputCase::NOT_FOUND;
