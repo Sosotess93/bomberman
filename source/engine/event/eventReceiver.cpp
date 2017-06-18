@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Tue May 30 21:39:51 2017 sofiane
-// Last update Sun Jun 18 20:15:22 2017 sofiane
+// Last update Sun Jun 18 20:46:05 2017 Melliti
 //
 
 #include "eventReceiver.hpp"
@@ -21,26 +21,25 @@ eventReceiver::~eventReceiver()
 }
 
 eventReceiver::inputCase	eventReceiver::lastKey(){
-  if (eventReceiver::lastPressedKey == eventReceiver::inputCase::KEY_KEY_W){
+  if (lastPressedKey == eventReceiver::inputCase::KEY_KEY_W){
     std::cout << "Vous avez appuyez sur AVANCER {W}!" << std::endl;
-    return (eventReceiver::inputCase::KEY_KEY_W);
+    return (lastPressedKey);
   }
-  if (eventReceiver::lastPressedKey == eventReceiver::inputCase::KEY_KEY_A){
+  if (lastPressedKey == eventReceiver::inputCase::KEY_KEY_A){
     std::cout << "Vous avez appuyez sur GAUCHE {A} !" << std::endl;
-    return (eventReceiver::inputCase::KEY_KEY_A);
+    return (lastPressedKey);
   }
-  if (eventReceiver::lastPressedKey == eventReceiver::inputCase::KEY_KEY_S){
+  if (lastPressedKey == eventReceiver::inputCase::KEY_KEY_S){
     std::cout << "Vous avez appuyez sur RECULER {S} !" << std::endl;
-
-    return (eventReceiver::inputCase::KEY_KEY_S);
+    return (lastPressedKey);
   }
-  if (eventReceiver::lastPressedKey == eventReceiver::inputCase::KEY_KEY_D){
+  if (lastPressedKey == eventReceiver::inputCase::KEY_KEY_D){
     std::cout << "Vous avez appuyez sur DROITE {D} !" << std::endl;
-    return (eventReceiver::inputCase::KEY_KEY_D);
+    return (lastPressedKey);
   }
-  if (eventReceiver::lastPressedKey == eventReceiver::inputCase::KEY_KEY_X){
+  if (lastPressedKey == eventReceiver::inputCase::KEY_KEY_X){
     std::cout << "Vous avez poser une bombe {X} !" << std::endl;
-    return (eventReceiver::inputCase::KEY_KEY_X);
+    return (lastPressedKey);
   }
   return (eventReceiver::inputCase::NOT_FOUND);
 }

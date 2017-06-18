@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Tue May 30 21:40:04 2017 sofiane
-// Last update Sun Jun 18 20:15:38 2017 sofiane
+// Last update Sun Jun 18 20:45:06 2017 Melliti
 //
 
 #ifndef	_EVENTRECEIVER_HPP_
@@ -25,7 +25,7 @@ public:
       KEY_KEY_X = irr::KEY_KEY_X,
       NOT_FOUND,
     };
-  int		lastPressedKey;
+  inputCase	lastPressedKey;
   inputCase	lastKey();
   eventReceiver();
   ~eventReceiver();
