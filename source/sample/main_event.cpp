@@ -1,56 +1,55 @@
 //
-// maint.cpp for  in /home/sofiane/Documents/bomberman/source/engine/event
+// main.cpp for  in /home/sofiane/Documents/bomberman/engine/window
 //
 // Made by sofiane
 // Login   <sofiane@epitech.net>
 //
-// Started on  Fri Jun  2 21:11:05 2017 sofiane
-// Last update Fri Jun  2 21:54:04 2017 sofiane
+// Started on  Thu Jun  1 14:41:04 2017 sofiane
+// Last update Sun Jun 18 21:30:29 2017 sofiane
 //
 
+#include "Window.hpp"
+#include "world3d.hpp"
 #include "eventReceiver.hpp"
 
-int	main()
+int		main()
 {
-  irr::IrrlichtDevice *device;
-  irr::video::IVideoDriver *driver;
-  irr::scene::IAnimatedMesh *mesh;
-  irr::scene::IAnimatedMeshSceneNode *node;
-  irr::scene::ISceneManager *smgr;
+  irr::scene::IAnimatedMeshSceneNode	*node;
+  Window				*windows = new Window();
+  World3d				*world = new World3d(node);
 
-  device = irr::createDevice(irr::video::EDT_OPENGL,
-						  irr::core::dimension2d<irr::u32>(600, 600),
-						  32, false, false, false); // Création du device
-
-  if (!device)
-    return (1); // Verification
-
-  device->setWindowCaption(L"Class Event"); // Nom fenêtre
-  driver = device->getVideoDriver();
-  smgr = device->getSceneManager();
-  mesh = smgr->getMesh("source/engine/event/media/sydney.md2"); // Load Sydney
-  if (!mesh)
+  // WINDOWS //
+  windows->myCreateDevice(800, 600);
+  if (!windows->m_device)
+    return (0);
+  windows->setDriver();
+  windows->setSceneManager();
+  // FIN WINDOW //
+  // ADD A MESH //
+  node = world->createMesh(windows, "source/engine/event/media/sydney.md2","source/engine/event/media/sydney.bmp", 10, 10, 10);
+  // FIN ADD MESH //
+  // SET ANIMATION MESH //
+  node = world->setAnimation(irr::scene::EMAT_RUN, 10, node); // Animation + speed + node en question
+  // FIN ANIMATION MESH //
+  // ADD CAMERA //
+  world->m_cam = world->addCamera(windows, 10, 10, 10); // Fentre + position X Y Z
+  // FIN CAMERA //
+  // SET POSTION CAMERA //
+  world->m_cam = world->setCameraPosition(100, 100, 100); // Position X Y Z
+  // FIN SET POSTION CAMERA //
+  // EVENT //
+  eventReceiver recep;
+  windows->m_device->setEventReceiver(&recep);
+  // FIN EVENT//
+  // BOUCLE DE JEU DE IRRLICHT //
+  while (windows->m_device->run())
     {
-      device->drop();
-      return (1);
+      windows->m_driver->beginScene(true, true, irr::video::SColor(200, 200, 200, 200));
+      recep.lastKey(); // RECEPTION DES TOUCHES
+      windows->m_sceneManager->drawAll();
+      windows->m_driver->endScene();
     }
-   node = smgr->addAnimatedMeshSceneNode(mesh);
-  if (node)
-    {
-      node->setMaterialFlag(irr::video::EMF_LIGHTING, false);
-      node->setMD2Animation(irr::scene::EMAT_STAND);
-      node->setMaterialTexture( 0, driver->getTexture("source/engine/event/media/sydney.bmp") );
-    }
-
-  smgr->addCameraSceneNode(0, irr::core::vector3df(0,30,-40), irr::core::vector3df(0,5,0));
-  eventReceiver receiver(node); // Appel de la class EVENT
-  device->setEventReceiver(&receiver); // Attribuer les event à un device
-  while(device->run())
-    {
-      driver->beginScene(true, true, irr::video::SColor(255,100,101,140));
-      smgr->drawAll();
-      driver->endScene();
-    }
-  device->drop();
+  windows->m_device->drop();
   return (0);
+  // FIN DE BOUCLE DE JEU DE IRRLICHT //
 }

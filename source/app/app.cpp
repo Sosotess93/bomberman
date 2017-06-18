@@ -89,6 +89,7 @@ int main()
 	{
 		if (event.OnEvent(input))
 		{
+			std::cout << "Event Recue" << std::endl;
 			key = event.lastKey();
 			if (player.event(key))
 			{
