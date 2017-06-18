@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Tue May 30 21:40:04 2017 sofiane
-// Last update Sun Jun 18 16:05:01 2017 sofiane
+// Last update Sun Jun 18 18:03:56 2017 Melliti
 //
 
 #ifndef	_EVENTRECEIVER_HPP_
@@ -15,6 +15,7 @@
 
 class  eventReceiver : public irr::IEventReceiver
 {
+public:
   enum	inputCase
     {
       KEY_KEY_W = irr::KEY_KEY_W,
@@ -25,10 +26,11 @@ class  eventReceiver : public irr::IEventReceiver
       NOT_FOUND,
   };
 
-public:
   eventReceiver(irr::scene::IAnimatedMeshSceneNode *node);
   ~eventReceiver();
   virtual	bool OnEvent(const irr::SEvent &event);
+  int		lastPressedKey;
+  inputCase	lastKey();
 };
 
 
