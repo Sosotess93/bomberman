@@ -3,6 +3,8 @@
 
 #include<iostream>
 #include "common.hpp"
+#include "irrlicht.h"
+#include "eventReceiver.hpp"
 
 namespace game
 {	
@@ -37,6 +39,8 @@ namespace game
 
 		int	getHp() const;
 		int getPower() const;
+		common::Location<float> getLocation() const;
+		irr::scene::IAnimatedMeshSceneNode* getMesh();
 
 		void setHp(int hp);
 		void setPower(int power);
@@ -45,11 +49,15 @@ namespace game
 		void setCharacteristic(characteristique c);
 
 		bool putBomb();
+		void setMesh(irr::scene::IAnimatedMeshSceneNode* mesh);
+
+		bool event(const eventReceiver::inputCase& input);
 
 	private:
-		characteristique		m_characteristique;
-		common::Location<float> m_location;
-		common::STATE			m_state;
+		characteristique						m_characteristique;
+		common::Location<float>					m_location;
+		common::STATE							m_state;
+		irr::scene::IAnimatedMeshSceneNode*		m_mesh;
 	};
 
 }

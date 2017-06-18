@@ -29,12 +29,12 @@ int	Window::myCreateDevice(const int x, const int y)
   				     irr::core::dimension2d<irr::u32>(x, y),
   				     32, false, false, false);
 
-  // this->m_device = NULL;
   if (!this->m_device)
     {
       std::cerr << "Error : Not device" << std::endl;
       return (0);
     }
+  return 1;
 }
 
 int	Window::setDriver()

@@ -38,6 +38,16 @@ namespace game
 	{
 		return m_characteristique.m_power;
 	}
+
+	common::Location<float> player::getLocation() const
+	{
+		return m_location;
+	}
+
+	irr::scene::IAnimatedMeshSceneNode* player::getMesh()
+	{
+		return m_mesh;
+	}
 	
 	void player::setState(common::STATE s)
 	{
@@ -81,4 +91,41 @@ namespace game
 		return TRUE;
 	}
 
+	void player::setMesh(irr::scene::IAnimatedMeshSceneNode* mesh)
+	{
+		if (mesh != NULL)
+			m_mesh = mesh;
+	}
+
+	bool player::event(const eventReceiver::inputCase& input)
+	{
+		switch (input)
+		{
+		case eventReceiver::inputCase::KEY_KEY_W:
+		{
+			std::cout << "forward" << std::endl;
+			m_location + common::Location<float>(10, 0, 0);
+		} break;
+		case eventReceiver::inputCase::KEY_KEY_S:
+		{
+			m_location + common::Location<float>(-10, 0, 0);
+		} break;
+		case eventReceiver::inputCase::KEY_KEY_D:
+		{
+			m_location + common::Location<float>(0, 10, 0);
+		} break;
+		case eventReceiver::inputCase::KEY_KEY_A:
+		{
+			m_location + common::Location<float>(0, -10, 0);
+		} break;
+		case eventReceiver::inputCase::KEY_KEY_X:
+		{
+			m_location + common::Location<float>(0, 0, 0);
+		} break;
+		default:
+			return false;
+			break;
+		}
+		return true;
+	}
 }

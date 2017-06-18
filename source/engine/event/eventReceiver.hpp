@@ -23,6 +23,11 @@ public:
       KEY_KEY_A = irr::KEY_KEY_A,
       KEY_KEY_D = irr::KEY_KEY_D,
       KEY_KEY_X = irr::KEY_KEY_X,
+	  KEY_DOWN = irr::KEY_DOWN,
+	  KEY_UP = irr::KEY_UP,
+	  KEY_LEFT = irr::KEY_LEFT,
+	  KEY_RIGHT = irr::KEY_RIGHT,
+
       NOT_FOUND,
     };
   int		lastPressedKey;

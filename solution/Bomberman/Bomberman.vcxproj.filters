@@ -60,6 +60,9 @@
     <ClCompile Include="..\..\source\engine\window\Window.cpp">
       <Filter>Fichiers sources\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\source\engine\world3d\world3d.cpp">
+      <Filter>Fichiers sources\Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\source\player\player.h">
@@ -619,6 +622,9 @@
     </ClInclude>
     <ClInclude Include="..\..\irrlicht\include\CVertexBuffer.h">
       <Filter>Fichiers d%27en-tête\irrlicht</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\engine\world3d\world3d.hpp">
+      <Filter>Fichiers d%27en-tête\Engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

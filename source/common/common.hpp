@@ -47,6 +47,13 @@ namespace common
 			m_z = NewLocation.m_z;
 			return *this;
 		}
+		Location& operator+(const common::Location<T>& NewLocation)
+		{
+			m_x + NewLocation.m_x;
+			m_y + NewLocation.m_y;
+			m_z + NewLocation.m_z;
+			return *this;
+		}
 
 		T m_x;
 		T m_y;
