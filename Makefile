@@ -5,7 +5,7 @@
 ## Login   <sofiane@epitech.net>
 ## 
 ## Started on  Tue May 30 15:02:50 2017 sofiane
-## Last update Sun Jun 18 21:33:14 2017 Melliti
+## Last update Sun Jun 18 23:01:22 2017 sofiane
 ##
 
 GPP	=	g++
@@ -13,6 +13,8 @@ GPP	=	g++
 NAME	=	Bomberman
 
 CPPFLAGS	+=	-I source/engine/window/
+CPPFLAGS	+=	-I source/player/
+CPPFLAGS	+=	-I source/common/
 CPPFLAGS	+=	-I source/engine/event/
 CPPFLAGS	+=	-I source/engine/world3d/
 CPPFLAGS	+=	-I source/engine/menu/
@@ -26,8 +28,11 @@ XEVENT	=	source/engine/event/
 XSAMPLE	=	source/sample/
 XWORLD3D=	source/engine/world3d/
 XMENU	=	source/engine/menu/
+XAPP	=	source/app/
+XPLAYER =	source/player/
 
-SRC	=	$(XSAMPLE)main_event.cpp \
+SRC	=	$(XAPP)app.cpp \
+		$(XPLAYER)player.cpp \
 		$(XMENU)menu.cpp \
 		$(XWINDOW)Window.cpp \
 		$(XWORLD3D)world3d.cpp \

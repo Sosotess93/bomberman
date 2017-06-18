@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Thu Jun  1 14:41:04 2017 sofiane
-// Last update Sun Jun 18 21:30:29 2017 sofiane
+// Last update Sun Jun 18 22:38:33 2017 sofiane
 //
 
 #include "Window.hpp"
@@ -26,7 +26,7 @@ int		main()
   windows->setSceneManager();
   // FIN WINDOW //
   // ADD A MESH //
-  node = world->createMesh(windows, "source/engine/event/media/sydney.md2","source/engine/event/media/sydney.bmp", 10, 10, 10);
+  node = world->createMesh(windows, "game/sydney.md2","game/sydney.bmp", 10, 10, 10);
   // FIN ADD MESH //
   // SET ANIMATION MESH //
   node = world->setAnimation(irr::scene::EMAT_RUN, 10, node); // Animation + speed + node en question

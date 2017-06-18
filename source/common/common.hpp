@@ -1,3 +1,13 @@
+//
+// common.hpp for  in /home/sofiane/Documents/bomberman/source/common
+//
+// Made by sofiane
+// Login   <sofiane@epitech.net>
+//
+// Started on  Sun Jun 18 23:04:56 2017 sofiane
+// Last update Sun Jun 18 23:05:11 2017 sofiane
+//
+
 #ifndef _COMMON_HPP_
 #define _COMMON_HPP_
 

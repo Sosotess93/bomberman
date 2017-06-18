@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Tue May 30 21:39:51 2017 sofiane
-// Last update Sun Jun 18 19:12:17 2017 sofiane
+// Last update Sun Jun 18 22:34:35 2017 sofiane
 //
 
 #include "eventReceiver.hpp"
@@ -21,7 +21,7 @@ eventReceiver::~eventReceiver()
 }
 
 eventReceiver::inputCase	eventReceiver::lastKey(){
-	return lastPressedKey;
+  return (lastPressedKey);
 }
 
 bool		eventReceiver::OnEvent(const irr::SEvent &event)
