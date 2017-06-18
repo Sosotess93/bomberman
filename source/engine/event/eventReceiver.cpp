@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Tue May 30 21:39:51 2017 sofiane
-// Last update Thu Jun 15 14:19:49 2017 sofiane
+// Last update Sun Jun 18 17:14:16 2017 sofiane
 //
 
 #include "eventReceiver.hpp"
@@ -20,14 +20,20 @@ eventReceiver::~eventReceiver()
 {
 }
 
+// eventReceiver::inputCase	eventReceiver::recupInput(const irr::SEvent &event)
+// {
+//   if (event.EventType == eventReceiver::inputCase::KEY_KEY_W)
+//     return (inputCase);
+// }
+
 bool		eventReceiver::OnEvent(const irr::SEvent &event)
 {
-  inputCase	input;
+  //  inputCase	input;
   if (event.EventType == irr::EET_KEY_INPUT_EVENT && !event.KeyInput.PressedDown)
     {
       switch (event.KeyInput.Key)
 	{
-	case irr::KEY_KEY_W: // avancer
+	case eventReceiver::inputCase::KEY_KEY_W: // avancer
 	  //input = 1;
 	  std::cout << "Vous avez appuyez sur AVANCER {W}!" << std::endl;
 	  return true;
@@ -49,6 +55,7 @@ bool		eventReceiver::OnEvent(const irr::SEvent &event)
 	  std::cout << "Vous avez poser une bombe {X} !" << std::endl;
 	  return true;
 	default:
+
 	  //input = 6;
 	  break;
 	}

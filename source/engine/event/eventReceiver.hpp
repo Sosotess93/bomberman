@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Tue May 30 21:40:04 2017 sofiane
-// Last update Fri Jun  2 21:32:35 2017 sofiane
+// Last update Sun Jun 18 16:05:01 2017 sofiane
 //
 
 #ifndef	_EVENTRECEIVER_HPP_
@@ -17,12 +17,12 @@ class  eventReceiver : public irr::IEventReceiver
 {
   enum	inputCase
     {
-      KEY_KEY_W,
-      KEY_KEY_S,
-      KEY_KEY_A,
-      KEY_KEY_D,
-      KEY_KEY_X,
-      NOT_FOUND
+      KEY_KEY_W = irr::KEY_KEY_W,
+      KEY_KEY_S = irr::KEY_KEY_S,
+      KEY_KEY_A = irr::KEY_KEY_A,
+      KEY_KEY_D = irr::KEY_KEY_D,
+      KEY_KEY_X = irr::KEY_KEY_X,
+      NOT_FOUND,
   };
 
 public:

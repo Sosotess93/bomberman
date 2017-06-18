@@ -5,7 +5,7 @@
 ## Login   <sofiane@epitech.net>
 ## 
 ## Started on  Tue May 30 15:02:50 2017 sofiane
-## Last update Fri Jun 16 02:15:43 2017 sofiane
+## Last update Sun Jun 18 17:35:20 2017 sofiane
 ##
 
 GPP	=	g++
@@ -15,6 +15,7 @@ NAME	=	Bomberman
 CPPFLAGS	+=	-I source/engine/window/
 CPPFLAGS	+=	-I source/engine/event/
 CPPFLAGS	+=	-I source/engine/world3d/
+CPPFLAGS	+=	-I source/engine/menu/
 CPPFLAGS	+=	-I irrlicht/include/
 
 
@@ -24,8 +25,10 @@ XWINDOW	=	source/engine/window/
 XEVENT	=	source/engine/event/
 XSAMPLE	=	source/sample/
 XWORLD3D=	source/engine/world3d/
+XMENU	=	source/engine/menu/
 
 SRC	=	$(XSAMPLE)main_window_world3d.cpp \
+		$(XMENU)menu.cpp \
 		$(XWINDOW)Window.cpp \
 		$(XWORLD3D)world3d.cpp \
 		$(XEVENT)eventReceiver.cpp \
