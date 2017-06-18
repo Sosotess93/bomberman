@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Tue May 30 21:40:04 2017 sofiane
-// Last update Sun Jun 18 19:10:32 2017 sofiane
+// Last update Sun Jun 18 20:15:38 2017 sofiane
 //
 
 #ifndef	_EVENTRECEIVER_HPP_
@@ -27,7 +27,7 @@ public:
     };
   int		lastPressedKey;
   inputCase	lastKey();
-  eventReceiver(irr::scene::IAnimatedMeshSceneNode *node);
+  eventReceiver();
   ~eventReceiver();
   virtual	bool OnEvent(const irr::SEvent &event);
 };

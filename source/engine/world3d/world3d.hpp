@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Thu Jun 15 16:01:22 2017 sofiane
-// Last update Sun Jun 18 19:56:03 2017 sofiane
+// Last update Sun Jun 18 20:22:08 2017 sofiane
 //
 
 #ifndef _WORLD3D_HPP_
@@ -16,13 +16,12 @@
 
 class					World3d
 {
-
+public:
   enum	Animation
     {
       STAND = irr::scene::EMAT_STAND,
       RUN =  irr::scene::EMAT_RUN,
     };
-public:
   irr::scene::IAnimatedMeshSceneNode	*m_mesh;
   irr::scene::ICameraSceneNode		*m_cam;
 

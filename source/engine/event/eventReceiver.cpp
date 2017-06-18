@@ -5,13 +5,13 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Tue May 30 21:39:51 2017 sofiane
-// Last update Sun Jun 18 19:12:17 2017 sofiane
+// Last update Sun Jun 18 20:15:22 2017 sofiane
 //
 
 #include "eventReceiver.hpp"
 #include <iostream>
 
-eventReceiver::eventReceiver(irr::scene::IAnimatedMeshSceneNode *node)
+eventReceiver::eventReceiver()
 {
 
 }
