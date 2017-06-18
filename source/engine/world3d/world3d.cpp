@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Thu Jun 15 16:01:15 2017 sofiane
-// Last update Sun Jun 18 17:33:20 2017 sofiane
+// Last update Sun Jun 18 20:02:15 2017 sofiane
 //
 
 #include "world3d.hpp"
@@ -33,6 +33,12 @@ irr::scene::IAnimatedMeshSceneNode      *World3d::createMesh(Window *win, const 
   this->m_mesh->setMaterialFlag(irr::video::EMF_LIGHTING, false);
   this->m_mesh->setMaterialTexture(0, win->m_driver->getTexture(texture));
   this->m_mesh->setPosition(irr::core::vector3df(x, y, z));
+  return (this->m_mesh);
+}
+
+irr::scene::IAnimatedMeshSceneNode	*World3d::setMeshPosition(Window *win, const int x, const int y, const int z)
+{
+  this->m_cam->setPosition(irr::core::vector3df(x, y, z));
   return (this->m_mesh);
 }
 

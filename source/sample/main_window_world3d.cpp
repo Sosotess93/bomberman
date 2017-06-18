@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Thu Jun  1 14:41:04 2017 sofiane
-// Last update Sun Jun 18 17:52:11 2017 sofiane
+// Last update Sun Jun 18 20:01:19 2017 sofiane
 //
 
 #include "Window.hpp"
@@ -15,7 +15,7 @@
 int		main()
 {
   Window	*windows = new Window();
-    irr::scene::IAnimatedMeshSceneNode *node;
+  irr::scene::IAnimatedMeshSceneNode *node;
   World3d	*world = new World3d(node);
   irr::scene::IAnimatedMesh *mesh;
 
@@ -28,7 +28,7 @@ int		main()
   windows->m_device->setWindowCaption(L"Class Event");
   Menu		*menu = new Menu(windows); // MENU
   node = world->createMesh(windows, "source/engine/event/media/sydney.md2","source/engine/event/media/sydney.bmp", 10, 10, 10); // CREATE MESH
-  node = world->setAnimation(irr::scene::EMAT_STAND, 100, node);
+  node = world->setAnimation(World3d::Animation::STAND, 100, node);
   world->m_cam = world->addCamera(windows, 100, 100, 100); // ADD CAMERA :)
   world->m_cam = world->setCameraPosition(20, 20, 20); // SET CAMERA POSTION
   //node = world->removeMesh(windows);
