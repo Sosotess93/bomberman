@@ -5,7 +5,7 @@
 ## Login   <sofiane@epitech.net>
 ## 
 ## Started on  Tue May 30 15:02:50 2017 sofiane
-## Last update Sun Jun 18 20:20:38 2017 sofiane
+## Last update Sun Jun 18 21:33:14 2017 Melliti
 ##
 
 GPP	=	g++
@@ -27,7 +27,7 @@ XSAMPLE	=	source/sample/
 XWORLD3D=	source/engine/world3d/
 XMENU	=	source/engine/menu/
 
-SRC	=	$(XSAMPLE)main_evente.cpp \
+SRC	=	$(XSAMPLE)main_event.cpp \
 		$(XMENU)menu.cpp \
 		$(XWINDOW)Window.cpp \
 		$(XWORLD3D)world3d.cpp \
