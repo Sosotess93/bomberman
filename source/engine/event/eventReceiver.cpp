@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Tue May 30 21:39:51 2017 sofiane
-// Last update Sun Jun 18 20:46:05 2017 Melliti
+// Last update Sun Jun 18 20:54:53 2017 Melliti
 //
 
 #include "eventReceiver.hpp"
@@ -41,7 +41,7 @@ eventReceiver::inputCase	eventReceiver::lastKey(){
     std::cout << "Vous avez poser une bombe {X} !" << std::endl;
     return (lastPressedKey);
   }
-  return (eventReceiver::inputCase::NOT_FOUND);
+  return (lastPressedKey);
 }
 
 bool		eventReceiver::OnEvent(const irr::SEvent &event)
@@ -52,25 +52,26 @@ bool		eventReceiver::OnEvent(const irr::SEvent &event)
 	{
 	case eventReceiver::inputCase::KEY_KEY_W: // avancer
 	  eventReceiver::lastPressedKey = eventReceiver::inputCase::KEY_KEY_W;
-	  lastKey();
+	  //	  lastKey();
 	  return true;
 	case irr::KEY_KEY_S: // reculer
 	  eventReceiver::lastPressedKey = eventReceiver::inputCase::KEY_KEY_S;
-	  lastKey();
+	  //	  lastKey();
 	  return true;
 	case irr::KEY_KEY_A: // gauche
 	  eventReceiver::lastPressedKey = eventReceiver::inputCase::KEY_KEY_A;
-	  lastKey();
+	  //	  lastKey();
 	  return true;
 	case irr::KEY_KEY_D: // droite
 	  eventReceiver::lastPressedKey = eventReceiver::inputCase::KEY_KEY_D;
-	  lastKey();
+	  //	  lastKey();
 	  return true;
 	case irr::KEY_KEY_X: // pauser une bombe
 	  eventReceiver::lastPressedKey = eventReceiver::inputCase::KEY_KEY_X;
-	  lastKey();
+	  //	  lastKey();
 	  return true;
 	default:
+	  eventReceiver::lastPressedKey = eventReceiver::inputCase::NOT_FOUND;
 	  break;
 	}
     }
