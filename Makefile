@@ -5,7 +5,7 @@
 ## Login   <sofiane@epitech.net>
 ## 
 ## Started on  Tue May 30 15:02:50 2017 sofiane
-## Last update Wed Jun 21 14:39:02 2017 sofiane
+## Last update Wed Jun 21 22:43:10 2017 sofiane
 ##
 
 GPP	=	g++
@@ -35,14 +35,14 @@ XAPP	=	source/app/
 XPLAYER =	source/player/
 XTESTE	=	source/engine/test/
 
-#SRC	=	$(XAPP)app.cpp \
+SRC	=	$(XAPP)app.cpp \
 		$(XPLAYER)player.cpp \
 		$(XMENU)menu.cpp \
 		$(XWINDOW)Window.cpp \
 		$(XWORLD3D)world3d.cpp \
-		$(XEVENT)myEventReceiver.cpp \
+		$(XEVENT)myEventManager.cpp \
 
-SRC	=	$(XSAMPLE)main_event.cpp \
+#SRC	=	$(XSAMPLE)main_event.cpp \
 		$(XWINDOW)Window.cpp \
 		$(XWORLD3D)world3d.cpp \
 		$(XEVENT)myEventManager.cpp \

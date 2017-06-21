@@ -4,10 +4,11 @@
 #include<iostream>
 #include "common.hpp"
 #include "irrlicht.h"
-#include "eventReceiver.hpp"
+#include "myEventManager.hpp"
+//#include "eventReceiver.hpp"
 
 namespace game
-{	
+{
 	struct characteristique
 	{
 		explicit characteristique() {}
@@ -50,9 +51,8 @@ namespace game
 
 		bool putBomb();
 		void setMesh(irr::scene::IAnimatedMeshSceneNode* mesh);
-
-		bool event(const eventReceiver::inputCase& input);
-
+		//		bool event(const eventReceiver::inputCase& input);
+		bool isMove(myEventManager *e);
 	private:
 		characteristique						m_characteristique;
 		common::Location<float>					m_location;

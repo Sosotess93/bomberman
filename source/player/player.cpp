@@ -97,35 +97,65 @@ namespace game
       m_mesh = mesh;
   }
 
-  bool player::event(const eventReceiver::inputCase& input)
+//   bool player::event(const eventReceiver::inputCase& input)
+//   {
+//     switch (input)
+//       {
+//       case eventReceiver::inputCase::KEY_KEY_W:
+//   	{
+//   	  std::cout << "forward" << std::endl;
+//   	  m_location + common::Location<float>(10, 0, 0);
+//   	} break;
+//       case eventReceiver::inputCase::KEY_KEY_S:
+//   	{
+//   	  m_location + common::Location<float>(-10, 0, 0);
+//   	} break;
+//       case eventReceiver::inputCase::KEY_KEY_D:
+//   	{
+//   	  m_location + common::Location<float>(0, 10, 0);
+//   	} break;
+//       case eventReceiver::inputCase::KEY_KEY_A:
+//   	{
+//   	  m_location + common::Location<float>(0, -10, 0);
+//   	} break;
+//       case eventReceiver::inputCase::KEY_KEY_X:
+//   	{
+//   	  m_location + common::Location<float>(0, 0, 0);
+//   	} break;
+//       default:
+//   	return false;
+//   	break;
+//       }
+//     return true;
+//   }
+// }
+
+  bool	player::isMove(myEventManager *receiver)
   {
-    switch (input)
+    if (receiver->IsKeyDown(irr::KEY_KEY_W))
       {
-      case eventReceiver::inputCase::KEY_KEY_W:
-	{
-	  std::cout << "forward" << std::endl;
-	  m_location + common::Location<float>(10, 0, 0);
-	} break;
-      case eventReceiver::inputCase::KEY_KEY_S:
-	{
-	  m_location + common::Location<float>(-10, 0, 0);
-	} break;
-      case eventReceiver::inputCase::KEY_KEY_D:
-	{
-	  m_location + common::Location<float>(0, 10, 0);
-	} break;
-      case eventReceiver::inputCase::KEY_KEY_A:
-	{
-	  m_location + common::Location<float>(0, -10, 0);
-	} break;
-      case eventReceiver::inputCase::KEY_KEY_X:
-	{
-	  m_location + common::Location<float>(0, 0, 0);
-	} break;
-      default:
-	return false;
-	break;
+	std::cout << "forward W" << std::endl;
+	m_location + common::Location<float>(10, 0, 0);
+	return (true);
       }
-    return true;
+    if (receiver->IsKeyDown(irr::KEY_KEY_S))
+      {
+	std::cout << "forward S" << std::endl;
+	 m_location + common::Location<float>(-10, 0, 0);
+	return (true);
+      }
+    if (receiver->IsKeyDown(irr::KEY_KEY_D))
+      {
+	std::cout << "forward D" << std::endl;
+	m_location + common::Location<float>(0, 10, 0);
+	return (true);
+      }
+    if (receiver->IsKeyDown(irr::KEY_KEY_A))
+      {
+	std::cout << "forward A" << std::endl;
+	  m_location + common::Location<float>(0, -10, 0);
+	return (true);
+      }
+    return (false);
   }
 }

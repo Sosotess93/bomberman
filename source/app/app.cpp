@@ -6,53 +6,55 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Sun Jun 18 23:00:24 2017 sofiane
-// Last update Wed Jun 21 13:30:47 2017 sofiane
+// Last update Wed Jun 21 23:26:37 2017 sofiane
 //
 
 #include <iostream>
 #include <memory>
 #include "Window.hpp"
 #include "player.h"
-#include "eventReceiver.hpp"
+//#include "eventReceiver.hpp"
+//
+//#include "myEventManager.hpp"
 #include "world3d.hpp"
 
-static void	eventCamera(World3d* w, const eventReceiver::inputCase& e)
-{
-	std::cout << "Cam" << std::endl;
-	switch (e)
-	{
-	case eventReceiver::KEY_UP:
-	{
-		w->setCameraPosition(
-			w->m_cam->getPosition().X,
-			w->m_cam->getPosition().Y + 100,
-			w->m_cam->getPosition().Z);
-	}break;
-	case eventReceiver::KEY_DOWN:
-	{
-		w->setCameraPosition(
-			w->m_cam->getPosition().X,
-			w->m_cam->getPosition().Y - 100,
-			w->m_cam->getPosition().Z);
-	}break;
-	case eventReceiver::KEY_RIGHT:
-	{
-		w->setCameraPosition(
-			w->m_cam->getPosition().X,
-			w->m_cam->getPosition().Y + 10,
-			w->m_cam->getPosition().Z);
-	}break;
-	case eventReceiver::KEY_LEFT:
-	{
-		w->setCameraPosition(
-			w->m_cam->getPosition().X,
-			w->m_cam->getPosition().Y - 10,
-			w->m_cam->getPosition().Z);
-	}break;
-	default:
-		break;
-	}
-}
+// static void	eventCamera(World3d* w, const eventReceiver::inputCase& e)
+// {
+// 	std::cout << "Cam" << std::endl;
+// 	switch (e)
+// 	{
+// 	case eventReceiver::KEY_UP:
+// 	{
+// 		w->setCameraPosition(
+// 			w->m_cam->getPosition().X,
+// 			w->m_cam->getPosition().Y + 100,
+// 			w->m_cam->getPosition().Z);
+// 	}break;
+// 	case eventReceiver::KEY_DOWN:
+// 	{
+// 		w->setCameraPosition(
+// 			w->m_cam->getPosition().X,
+// 			w->m_cam->getPosition().Y - 100,
+// 			w->m_cam->getPosition().Z);
+// 	}break;
+// 	case eventReceiver::KEY_RIGHT:
+// 	{
+// 		w->setCameraPosition(
+// 			w->m_cam->getPosition().X,
+// 			w->m_cam->getPosition().Y + 10,
+// 			w->m_cam->getPosition().Z);
+// 	}break;
+// 	case eventReceiver::KEY_LEFT:
+// 	{
+// 		w->setCameraPosition(
+// 			w->m_cam->getPosition().X,
+// 			w->m_cam->getPosition().Y - 10,
+// 			w->m_cam->getPosition().Z);
+// 	}break;
+// 	default:
+// 		break;
+// 	}
+// }
 
 int	main()
 {
@@ -91,30 +93,30 @@ int	main()
       return 1;
     }
 
-  eventReceiver event;
-  irr::SEvent input;
-  eventReceiver::inputCase key;
-  window->m_device->setEventReceiver(&event);
+  // eventReceiver receiver;
+   irr::SEvent input;
+  // eventReceiver::inputCase key;
+  myEventManager	receiver;
+  window->m_device->setEventReceiver(&receiver);
 
   while (window->m_device->run())
     {
-      if (event.OnEvent(input))
-      	{
-      	  std::cout << "Event Recue" << std::endl;
-	  key = event.lastKey();
-	  if (player.event(key))
-	    {
-	      world3D.setCameraPosition(
-					player.getLocation().m_x,
-					player.getLocation().m_y + 100,
-					player.getLocation().m_y
-					);
-	    }
-	  else
-	    {
-	      eventCamera(&world3D, key);
-	    }
+      // 	  std::cout << "Event Recue" << std::endl;
+      // 	  key = receiver.lastKey();
+      if (player.isMove(&receiver))
+	{
+	  world3D.setCameraPosition(
+				    player.getLocation().m_x,
+				    player.getLocation().m_y + 100,
+				    player.getLocation().m_y
+				    );
 	}
+      // 	  else
+      // 	    {
+      // 	      //	      eventCamera(&world3D, key);
+      // 	    }
+      // 	}
+
       window->m_driver->beginScene(true, true, irr::video::SColor(200, 200, 200, 200));
       window->m_sceneManager->drawAll();
       window->m_driver->endScene();
