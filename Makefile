@@ -5,7 +5,7 @@
 ## Login   <sofiane@epitech.net>
 ## 
 ## Started on  Tue May 30 15:02:50 2017 sofiane
-## Last update Sun Jun 18 23:01:22 2017 sofiane
+## Last update Wed Jun 21 02:33:38 2017 sofiane
 ##
 
 GPP	=	g++
@@ -18,6 +18,7 @@ CPPFLAGS	+=	-I source/common/
 CPPFLAGS	+=	-I source/engine/event/
 CPPFLAGS	+=	-I source/engine/world3d/
 CPPFLAGS	+=	-I source/engine/menu/
+CPPFLAGS	+=	-I source/engine/test/
 CPPFLAGS	+=	-I irrlicht/include/
 
 
@@ -30,13 +31,19 @@ XWORLD3D=	source/engine/world3d/
 XMENU	=	source/engine/menu/
 XAPP	=	source/app/
 XPLAYER =	source/player/
+XTESTE	=	source/engine/test/
 
-SRC	=	$(XAPP)app.cpp \
+#SRC	=	$(XAPP)app.cpp \
 		$(XPLAYER)player.cpp \
 		$(XMENU)menu.cpp \
 		$(XWINDOW)Window.cpp \
 		$(XWORLD3D)world3d.cpp \
-		$(XEVENT)eventReceiver.cpp \
+		$(XEVENT)myEventReceiver.cpp \
+
+SRC	=	$(XSAMPLE)main_event.cpp \
+		$(XWINDOW)Window.cpp \
+		$(XWORLD3D)world3d.cpp \
+		$(XEVENT)myEventManager.cpp
 
 OBJ	=	$(SRC:.cpp=.o)
 

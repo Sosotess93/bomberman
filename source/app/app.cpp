@@ -1,3 +1,4 @@
+
 //
 // app.cpp for  in /home/sofiane/Documents/bomberman
 //
@@ -5,7 +6,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Sun Jun 18 23:00:24 2017 sofiane
-// Last update Sun Jun 18 23:08:05 2017 sofiane
+// Last update Wed Jun 21 13:30:47 2017 sofiane
 //
 
 #include <iostream>
@@ -31,7 +32,7 @@ static void	eventCamera(World3d* w, const eventReceiver::inputCase& e)
 	{
 		w->setCameraPosition(
 			w->m_cam->getPosition().X,
-			w->m_cam->getPosition().Y + 100,
+			w->m_cam->getPosition().Y - 100,
 			w->m_cam->getPosition().Z);
 	}break;
 	case eventReceiver::KEY_RIGHT:
@@ -98,8 +99,8 @@ int	main()
   while (window->m_device->run())
     {
       if (event.OnEvent(input))
-	{
-	  std::cout << "Event Recue" << std::endl;
+      	{
+      	  std::cout << "Event Recue" << std::endl;
 	  key = event.lastKey();
 	  if (player.event(key))
 	    {

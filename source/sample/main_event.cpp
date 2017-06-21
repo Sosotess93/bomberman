@@ -5,12 +5,14 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Thu Jun  1 14:41:04 2017 sofiane
-// Last update Sun Jun 18 22:38:33 2017 sofiane
+// Last update Wed Jun 21 13:38:25 2017 sofiane
 //
 
 #include "Window.hpp"
 #include "world3d.hpp"
 #include "eventReceiver.hpp"
+#include "myEventManager.hpp"
+#include <iostream>
 
 int		main()
 {
@@ -38,14 +40,18 @@ int		main()
   world->m_cam = world->setCameraPosition(100, 100, 100); // Position X Y Z
   // FIN SET POSTION CAMERA //
   // EVENT //
-  eventReceiver recep;
-  windows->m_device->setEventReceiver(&recep);
+  myEventManager receiver;
+  irr::SEvent input;
+  windows->m_device->setEventReceiver(&receiver);
   // FIN EVENT//
   // BOUCLE DE JEU DE IRRLICHT //
   while (windows->m_device->run())
     {
       windows->m_driver->beginScene(true, true, irr::video::SColor(200, 200, 200, 200));
-      recep.lastKey(); // RECEPTION DES TOUCHES
+      if (receiver.IsKeyDown(irr::KEY_KEY_R) == 1)
+	return (0);
+      if (receiver.IsKeyDown(irr::KEY_KEY_A) == 1)
+	std::cout << "Je print A" << std::endl;
       windows->m_sceneManager->drawAll();
       windows->m_driver->endScene();
     }
