@@ -1,13 +1,3 @@
-//
-// menu.hpp for  in /home/sofiane/Documents/bomberman/source/engine/menu
-//
-// Made by sofiane
-// Login   <sofiane@epitech.net>
-//
-// Started on  Sun Jun 18 17:24:20 2017 sofiane
-// Last update Sun Jun 18 17:36:34 2017 sofiane
-//
-
 #ifndef __MENU_HPP__
 # define __MENU_HPP__
 

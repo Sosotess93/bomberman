@@ -1,21 +1,7 @@
-
-//
-// app.cpp for  in /home/sofiane/Documents/bomberman
-//
-// Made by sofiane
-// Login   <sofiane@epitech.net>
-//
-// Started on  Sun Jun 18 23:00:24 2017 sofiane
-// Last update Wed Jun 21 23:26:37 2017 sofiane
-//
-
 #include <iostream>
 #include <memory>
 #include "Window.hpp"
 #include "player.h"
-//#include "eventReceiver.hpp"
-//
-//#include "myEventManager.hpp"
 #include "world3d.hpp"
 
 // static void	eventCamera(World3d* w, const eventReceiver::inputCase& e)

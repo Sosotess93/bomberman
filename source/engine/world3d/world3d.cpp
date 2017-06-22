@@ -1,13 +1,3 @@
-//
-// world3d.cpp for  in /home/sofiane/Documents/bomberman/source/engine/world3d
-//
-// Made by sofiane
-// Login   <sofiane@epitech.net>
-//
-// Started on  Thu Jun 15 16:01:15 2017 sofiane
-// Last update Sun Jun 18 20:02:15 2017 sofiane
-//
-
 #include "world3d.hpp"
 
 World3d::World3d(irr::scene::IAnimatedMeshSceneNode *modele)

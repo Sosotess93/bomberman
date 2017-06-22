@@ -1,13 +1,3 @@
-//
-// main.cpp for  in /home/sofiane/Documents/bomberman/engine/window
-//
-// Made by sofiane
-// Login   <sofiane@epitech.net>
-//
-// Started on  Thu Jun  1 14:41:04 2017 sofiane
-// Last update Fri Jun  2 14:30:21 2017 sofiane
-//
-
 #include "Window.hpp"
 
 int		main()

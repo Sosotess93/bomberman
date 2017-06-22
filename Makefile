@@ -5,13 +5,13 @@
 ## Login   <sofiane@epitech.net>
 ## 
 ## Started on  Tue May 30 15:02:50 2017 sofiane
-## Last update Thu Jun 22 18:31:23 2017 sofiane
+## Last update Thu Jun 22 19:58:42 2017 sofiane
 ##
 
 GPP	=	g++
 
 NAME	=	Bomberman
-NAME2	=	Menu
+NAME1	=	Menu
 
 CPPFLAGS	+=	-I source/engine/window/
 CPPFLAGS	+=	-I source/player/
@@ -37,38 +37,38 @@ XPLAYER =	source/player/
 XTESTE	=	source/engine/test/
 
 
-SRC	=	$(XSAMPLE)main_event.cpp \
+SRCS	=	$(XSAMPLE)main_event.cpp \
 		$(XWINDOW)Window.cpp \
 		$(XWORLD3D)world3d.cpp \
 		$(XEVENT)myEventManager.cpp \
 		$(XCOL)collision.cpp
 
-SRC2	=	$(XSAMPLE)main_menu.cpp \
-		$(XWINDOW)Window.cpp \
+SRCS1	=	$(XWINDOW)Window.cpp \
+		$(XMENU)menu.cpp \
+		$(XSAMPLE)main_menu.cpp \
 
-OBJ	=	$(SRC:.cpp=.o)
+OBJS	=	$(SRCS:.cpp=.o)
 
-OBJ2	=	$(SRC2:.cpp=.o)
+OBJS1	=	$(SRCS1:.cpp=.o)
 
 
 RM	=	rm -f
 
 CPPFLAGS+=	-std=c++11 -g
 
-all:		$(NAME) $(NAME2)
+all:		$(NAME) $(NAME1)
 
-$(NAME):	$(OBJ)
-		$(GPP) $(OBJ) -o $(NAME) $(LDFLAGS)
-		$(GPP) $(OBJ2) -o $(NAME2) $(LDFLAGS)
+$(NAME):	$(OBJS)
+		$(GPP) $(OBJS) -o $(NAME) $(LDFLAGS)
 
-install:	all
+$(NAME1):	$(OBJS1)
+		$(GPP) $(OBJS1) -o $(NAME1) $(LDFLAGS)
 
 clean:
-		$(RM) $(OBJ)
-		$(RM) $(OBJ2)
+		$(RM) $(OBJS) $(OBJS1)
 
 fclean:		clean
-		$(RM) $(NAME)
+		$(RM) $(NAME) $(NAME1)
 
 re:		fclean all
 

@@ -1,13 +1,3 @@
-//
-// world3d.hpp for  in /home/sofiane/Documents/bomberman/source/engine/world3d
-//
-// Made by sofiane
-// Login   <sofiane@epitech.net>
-//
-// Started on  Thu Jun 15 16:01:22 2017 sofiane
-// Last update Sun Jun 18 20:22:08 2017 sofiane
-//
-
 #ifndef _WORLD3D_HPP_
 # define _WORLD3D_HPP_
 

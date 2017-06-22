@@ -1,13 +1,3 @@
-//
-// main.cpp for  in /home/sofiane/Documents/bomberman/engine/window
-//
-// Made by sofiane
-// Login   <sofiane@epitech.net>
-//
-// Started on  Thu Jun  1 14:41:04 2017 sofiane
-// Last update Thu Jun 22 18:24:09 2017 sofiane
-//
-
 #include "Window.hpp"
 #include "world3d.hpp"
 #include "eventReceiver.hpp"
