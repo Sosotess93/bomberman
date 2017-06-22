@@ -5,7 +5,7 @@
 // Login   <sofiane@epitech.net>
 //
 // Started on  Thu Jun  1 14:41:04 2017 sofiane
-// Last update Wed Jun 21 15:02:23 2017 sofiane
+// Last update Thu Jun 22 18:24:09 2017 sofiane
 //
 
 #include "Window.hpp"
@@ -61,6 +61,9 @@ int		main()
 	return (0);
       if (receiver.IsKeyDown(irr::KEY_KEY_W) == 1) // EVENT TOUCHE W POUR BOUGER LE CUBE
 	cube->setPosition(cube->getPosition() + irr::core::vector3df(0,0,5));
+      if (receiver.IsKeyDown(irr::KEY_KEY_S) == 1) // EVENT TOUCHE W POUR BOUGER LE CUBE
+	cube->setPosition(cube->getPosition() - irr::core::vector3df(0,0,5));
+
       if (col->collisions(cube, sphere, 1)) // CHECK COLLISION ENTRE SPHERE ET CUBE
 	std::cout<<"Collided!"<< std::endl;
       windows->m_sceneManager->drawAll();
