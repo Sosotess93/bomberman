@@ -1,75 +1,46 @@
 ##
-## Makefile for  in /home/sofiane/Documents/cpp_indie_studio
-## 
-## Made by sofiane
-## Login   <sofiane@epitech.net>
-## 
-## Started on  Tue May 30 15:02:50 2017 sofiane
-## Last update Thu Jun 22 19:58:42 2017 sofiane
+## Makefile for indie in /home/sivaku_v/rendu/Bomberman_v2
+##
+## Made by Vituzan Sivakumaran
+## Login   <sivaku_v@epitech.net>
+##
+## Started on  Sat Jun  4 19:16:09 2016 Vituzan Sivakumaran
+## Last update Sun Jun  5 23:32:49 2016 daoud_c
 ##
 
-GPP	=	g++
+NAME=		Bomberman
 
-NAME	=	Bomberman
-NAME1	=	Menu
+SRC=		main.cpp \
+		menu.cpp \
+		MenuEvent.cpp \
+		game.cpp \
+		perso.cpp \
+		maps.cpp \
+		bomb.cpp \
+		init.cpp \
+		eventReceiver.cpp
 
-CPPFLAGS	+=	-I source/engine/window/
-CPPFLAGS	+=	-I source/player/
-CPPFLAGS	+=	-I source/common/
-CPPFLAGS	+=	-I source/engine/event/
-CPPFLAGS	+=	-I source/engine/world3d/
-CPPFLAGS	+=	-I source/engine/menu/
-CPPFLAGS	+=	-I source/engine/collision/
-CPPFLAGS	+=	-I source/engine/test/
-CPPFLAGS	+=	-I irrlicht/include/
+OBJ=		$(SRC:.cpp=.o)
 
+GCC=		g++
 
-LDFLAGS	=	-L irrlicht/lib -lIrrlicht -lGL -lX11 -lXxf86vm
-
-XWINDOW	=	source/engine/window/
-XEVENT	=	source/engine/event/
-XSAMPLE	=	source/sample/
-XWORLD3D=	source/engine/world3d/
-XMENU	=	source/engine/menu/
-XCOL	=	source/engine/collision/
-XAPP	=	source/app/
-XPLAYER =	source/player/
-XTESTE	=	source/engine/test/
-
-
-SRCS	=	$(XSAMPLE)main_event.cpp \
-		$(XWINDOW)Window.cpp \
-		$(XWORLD3D)world3d.cpp \
-		$(XEVENT)myEventManager.cpp \
-		$(XCOL)collision.cpp
-
-SRCS1	=	$(XWINDOW)Window.cpp \
-		$(XMENU)menu.cpp \
-		$(XSAMPLE)main_menu.cpp \
-
-OBJS	=	$(SRCS:.cpp=.o)
-
-OBJS1	=	$(SRCS1:.cpp=.o)
-
-
-RM	=	rm -f
+RM=		rm -f
 
 CPPFLAGS+=	-std=c++11 -g
 
-all:		$(NAME) $(NAME1)
+all:		$(NAME)
 
-$(NAME):	$(OBJS)
-		$(GPP) $(OBJS) -o $(NAME) $(LDFLAGS)
+$(NAME):	$(OBJ)
+		$(GCC) -o $(NAME) $(OBJ) -L lib/ -lIrrlicht -lGL -lX11 -lXxf86vm -lSDL_mixer -lSDL -lpthread
 
-$(NAME1):	$(OBJS1)
-		$(GPP) $(OBJS1) -o $(NAME1) $(LDFLAGS)
+install:	all
 
 clean:
-		$(RM) $(OBJS) $(OBJS1)
+		$(RM) $(OBJ)
 
 fclean:		clean
-		$(RM) $(NAME) $(NAME1)
+		$(RM) $(NAME)
 
 re:		fclean all
 
-.PHONY:		all install clean fclean re
+.PHONY:		all clean fclean re
