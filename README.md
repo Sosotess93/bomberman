@@ -19,7 +19,7 @@ the goal is to program a 3D video game in a 4 weeks deadline using the Irlicht3D
 
 
 ## Credits
-[Sofiane Charrad(https://github.com/Sosotess93)  
+Sofiane Charrad (https://github.com/Sosotess93)  
  
 ## Contact
   sofianecharrad@hotmail.fr
