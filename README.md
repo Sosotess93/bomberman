@@ -5,6 +5,9 @@
 This is the last C++ coding project for Epitech's sophomores, 
 the goal is to program a 3D video game in a 4 weeks deadline using the Irlicht3D library.
 
+![alt text](https://github.com/Sosotess93/bomberman/blob/master/screen.png)
+
+
 ## Configuration
 * **Code style**
   * Every developper participating to this project must apply this [coding convention](https://github.com/Sosotess93/bomberman/wiki/Code-Convention).
